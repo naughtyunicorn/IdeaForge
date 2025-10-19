@@ -1,0 +1,42 @@
+{
+  "name": "ideaforge",
+  "version": "1.0.0",
+  "description": "Hybrid IP-NFT creation, submission, and monetization platform",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "contracts"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "test": "npm run test:contracts",
+    "test:contracts": "cd contracts && npm run test",
+    "deploy": "cd contracts && npm run deploy",
+    "deploy:testnet": "cd contracts && npm run deploy:mumbai",
+    "compile": "cd contracts && npm run compile",
+    "launch": "./scripts/launch.sh",
+    "launch:demo": "./scripts/launch-demo.sh",
+    "build:production": "./scripts/build-production.sh",
+    "start": "npm run launch:demo"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "web3",
+    "nft",
+    "dao",
+    "ip",
+    "blockchain",
+    "polygon",
+    "defi"
+  ],
+  "author": "TRTSKCS",
+  "license": "MIT"
+}

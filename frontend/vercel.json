@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "name": "ideaforge",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_API_URL": "@api_url",
+    "NEXT_PUBLIC_RPC_URL": "@rpc_url",
+    "NEXT_PUBLIC_ALCHEMY_API_KEY": "@alchemy_api_key",
+    "NEXT_PUBLIC_PINATA_API_KEY": "@pinata_api_key",
+    "NEXT_PUBLIC_PINATA_SECRET_KEY": "@pinata_secret_key",
+    "NEXT_PUBLIC_FORGE_TOKEN_ADDRESS": "@forge_token_address",
+    "NEXT_PUBLIC_IPNFT_ADDRESS": "@ipnft_address",
+    "NEXT_PUBLIC_IDEA_FORGE_CORE_ADDRESS": "@idea_forge_core_address",
+    "NEXT_PUBLIC_IDEA_FORGE_DAO_ADDRESS": "@idea_forge_dao_address",
+    "NEXT_PUBLIC_REVENUE_SPLITTER_ADDRESS": "@revenue_splitter_address"
+  },
+  "functions": {
+    "app/api/**/*.ts": {
+      "maxDuration": 30
+    }
+  }
+}
